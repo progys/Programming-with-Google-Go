@@ -1,2 +1,2 @@
 # Programming-with-Google-Go
-Coursera course exercises, reviews and assignments with Go language basics
+Coursera course https://www.coursera.org/specializations/google-golang exercises, reviews and assignments with Go language basics
