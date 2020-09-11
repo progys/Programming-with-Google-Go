@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /*
-* Teaches how to read from standard input, how do simple type conversions and use pointers.
+* Teaches how to read from standard input, how to do simple type conversions and use pointers.
  */
 func main() {
 	x := new(float64)
