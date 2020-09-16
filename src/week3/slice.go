@@ -15,10 +15,32 @@ import (
 * The slice must grow in size to accommodate any number of integers which the user decides to enter.
 * The program should only quit (exiting the loop) when the user enters the character ‘X’ instead of an integer.
  */
+
+func swap(i int, integers []int64) {
+	integers[i], integers[i-1] = integers[i-1], integers[i]
+}
+
+func sortEnd(integers []int64) {
+	for i := len(integers) - 1; i >= 1; i-- {
+		if integers[i] < integers[i-1] {
+			swap(i, integers)
+		}
+	}
+}
+
+func sortFromIndex(integers []int64, start int) {
+	for i := start; i < len(integers)-1; i++ {
+		if integers[i] > integers[i+1] {
+			swap(i+1, integers)
+		}
+	}
+}
+
 func main() {
-	integers := []int64{}
+	integers := make([]int64, 3)
 
 	var input string
+	numbersEntered := 0
 	for {
 		fmt.Println("Please enter an integer: ")
 		fmt.Scan(&input)
@@ -34,13 +56,21 @@ func main() {
 			continue
 		}
 
-		integers = append(integers, number)
-
-		for i := len(integers) - 1; i >= 1; i-- {
-			if integers[i] < integers[i-1] {
-				integers[i], integers[i-1] = integers[i-1], integers[i]
+		if numbersEntered >= len(integers) {
+			integers = append(integers, number)
+		} else {
+			for i := range integers {
+				if integers[i] == 0 {
+					integers[i] = number
+					sortFromIndex(integers, i)
+					break
+				}
 			}
 		}
+
+		numbersEntered++
+
+		sortEnd(integers)
 
 		fmt.Println("Sorted: ", integers)
 	}
