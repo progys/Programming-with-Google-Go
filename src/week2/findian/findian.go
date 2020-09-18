@@ -31,7 +31,7 @@ func main() {
 		return
 	}
 
-	lowerCaseInput := strings.ToLower(text[0 : len(text)-1])
+	lowerCaseInput := strings.TrimSpace(strings.ToLower(text))
 
 	switch {
 	case !strings.HasPrefix(lowerCaseInput, i):
