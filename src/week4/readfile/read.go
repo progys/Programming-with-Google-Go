@@ -107,6 +107,10 @@ func readLine(file *os.File) (nameType, bool) {
 
 func stringToName(word string) fixedLengthName {
 	var result [20]rune
+	if len(word) > 20 {
+		fmt.Println("Found too long name or surname. Skipping it!", word)
+		word = "[too long, skipped...]"
+	}
 	for i, char := range word {
 		result[i] = char
 	}
