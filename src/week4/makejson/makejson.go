@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"strings"
 )
 
 /**
@@ -14,15 +13,17 @@ import (
  * Your program should use Marshal() to create a JSON object from the map, and then your program should print the JSON object.
  */
 func main() {
-	consoleReader := bufio.NewReader(os.Stdin)
+	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Print("Please enter your name: ")
-	name, _ := consoleReader.ReadString('\r')
+	scanner.Scan()
+	name := scanner.Text()
 
 	fmt.Print("Please enter your address: ")
-	address, _ := consoleReader.ReadString('\r')
+	scanner.Scan()
+	address := scanner.Text()
 
-	userMap := map[string]string{"name": strings.TrimSpace(name), "address": strings.TrimSpace(address)}
+	userMap := map[string]string{"name": name, "address": address}
 	json, err := json.Marshal(userMap)
 
 	if err != nil {
