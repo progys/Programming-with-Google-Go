@@ -16,7 +16,7 @@ import (
  * The program should not be case-sensitive, so it does not matter if the characters are upper-case or lower-case.
  */
 func main() {
-	consoleReader := bufio.NewReader(os.Stdin)
+	scanner := bufio.NewScanner(os.Stdin)
 	const (
 		a = "a"
 		n = "n"
@@ -24,12 +24,8 @@ func main() {
 	)
 
 	fmt.Println("Enter some text, I will check if it starts with 'i', ends with 'n' and contains 'a': ")
-	text, err := consoleReader.ReadString('\r')
-
-	if err != nil {
-		fmt.Printf("Some error happened '%v'. Exiting program.\n", err)
-		return
-	}
+	scanner.Scan()
+	text := scanner.Text()
 
 	lowerCaseInput := strings.TrimSpace(strings.ToLower(text))
 
