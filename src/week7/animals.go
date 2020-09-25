@@ -40,7 +40,7 @@ func (animal Animal) Eat() {
 	fmt.Println(animal.food)
 }
 
-//Move prints out where animal moves
+//Move prints out how animal moves
 func (animal Animal) Move() {
 	fmt.Println(animal.locomotion)
 }
