@@ -115,16 +115,6 @@ type Cow struct {
 	data animalData
 }
 
-//Bird represents bird
-type Bird struct {
-	data animalData
-}
-
-//Snake represents snake
-type Snake struct {
-	data animalData
-}
-
 //Eat prints out what cow eats
 func (animal Cow) Eat() {
 	fmt.Println(animal.data.food)
@@ -140,6 +130,11 @@ func (animal Cow) Speak() {
 	fmt.Println(animal.data.noise)
 }
 
+//Bird represents bird
+type Bird struct {
+	data animalData
+}
+
 //Eat prints out what bird eats
 func (animal Bird) Eat() {
 	fmt.Println(animal.data.food)
@@ -153,6 +148,11 @@ func (animal Bird) Move() {
 //Speak prints out what sound bird makes
 func (animal Bird) Speak() {
 	fmt.Println(animal.data.noise)
+}
+
+//Snake represents snake
+type Snake struct {
+	data animalData
 }
 
 //Eat prints out what snake eats
