@@ -1,0 +1,12 @@
+Moore's Law:
+It states that transistors density is doubling every two years. Which in turn means that speeds are doubling as smaller transistors switch faster.
+However, this is not true anymore. It was just an observation at that time, it is not a physical law.
+
+Reasons why Moore's Law does not hold anymore:
+- Power wall: (P = alfa*C*F*V*V). If you double the density, transistors switch faster (clock rate increases) - with that power consumption increases too (freq is F in formula above).
+- Temperature: increased power consumption means increased temperature/heat. You need very efficient cooling, air cooling is effective only to a point. 
+- Dennard Scaling: power consumption can be lowered by lowering voltage swing (V in a formula), but you cannot go below a certain threshold.
+- Noise problem: if you go too low with decreasing voltage swing values - there will be noise interference from the environment.
+- Leakage power: if density increases, so does the leakage power. It is not taken into accound by Dennard Scaling.
+
+All, those physical limitations impact Moore's law.
