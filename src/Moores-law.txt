@@ -1,3 +1,6 @@
+Exercise:
+The goal of this activity is to define Moore's law and describe the physical limitations in devices that have stopped it from continuing to be true.
+
 Moore's Law:
 It states that transistors density is doubling every two years. Which in turn means that speeds are doubling as smaller transistors switch faster.
 However, this is not true anymore. It was just an observation at that time, it is not a physical law.
