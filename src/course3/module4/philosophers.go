@@ -63,25 +63,25 @@ func host(channels []chan bool) {
 	eatersCount := 0
 	for {
 		select {
-		case x := <-channels[0]:
-			eatersCount = handleRequest(channels[0], eatersCount, x)
-		case x := <-channels[1]:
-			eatersCount = handleRequest(channels[1], eatersCount, x)
-		case x := <-channels[2]:
-			eatersCount = handleRequest(channels[2], eatersCount, x)
-		case x := <-channels[3]:
-			eatersCount = handleRequest(channels[3], eatersCount, x)
-		case x := <-channels[4]:
-			eatersCount = handleRequest(channels[4], eatersCount, x)
+		case request := <-channels[0]:
+			eatersCount = handleRequest(channels[0], eatersCount, request)
+		case request := <-channels[1]:
+			eatersCount = handleRequest(channels[1], eatersCount, request)
+		case request := <-channels[2]:
+			eatersCount = handleRequest(channels[2], eatersCount, request)
+		case request := <-channels[3]:
+			eatersCount = handleRequest(channels[3], eatersCount, request)
+		case request := <-channels[4]:
+			eatersCount = handleRequest(channels[4], eatersCount, request)
 		}
 	}
 }
 
-func handleRequest(channel chan bool, eatersCount int, x bool) int {
-	if x == true && eatersCount < 2 {
+func handleRequest(channel chan bool, eatersCount int, request bool) int {
+	if request == true && eatersCount < 2 {
 		eatersCount++
 		channel <- true //allow to eat
-	} else if x == false {
+	} else if request == false {
 		eatersCount-- //finished eating
 	} else {
 		channel <- false //signal no permission to eat, should wait more
